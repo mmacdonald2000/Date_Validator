@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Date Input Validation</title>
+    <link rel="stylesheet" href="./css/bootstrap.css">
+    <link rel="stylesheet" href="./css/master.css">
+  </head>
+
+  <body>
+    <h1>Date Validation Feedback </h1>
+    <p>This code gives the user some feedback based on the HTML 5 date input type.  Feel free to give it several incorrect dates (2/31/2000 for example).</p>
+
+    <form id="dateForm">
+      <!--Date-->
+      <div class="form-group">
+        <label for="formAddDate">Publication Date</label>
+        <input type="date" id="formAddDate" class="form-control" name="addDate" required>
+      </div>
+      <!--Submit-->
+      <div class="form-group">
+        <input type="submit" value="Submit Date" id="formSubmit" class="form-control">
+      </div>
+
+    </form>
+
+
+    <p>This is the date you choose:
+      <span id="dateInsert">  </span>
+    </p>
+
+
+
+    <!-- import jQuery -->
+    <script src="./js/jquery.js"></script>
+
+    <script src="./js/main.js"></script>
+  </body>
+</html>
