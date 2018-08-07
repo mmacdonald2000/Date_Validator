@@ -10,13 +10,18 @@
 
   <body>
     <h1>Date Validation Feedback </h1>
-    <p>This code gives the user some feedback based on the HTML 5 date input type.  Feel free to give it several incorrect dates (2/31/2000 for example).</p>
+    <p>This code gives the user some feedback based on the HTML 5 date input type.  Feel free to submit without a date or give it incorrect dates (2/31/2018 for example).</p>
+    <h3>Requirements:</h3>
+    <ul>
+      <li>Bootstrap (4.1)</li>
+      <li>jQuery (3.3.1)</li>
+    </ul>
 
     <form id="dateForm" class="needs-validation" novalidate>
       <!--Date-->
       <div class="form-group">
         <label for="formAddDate">Publication Date</label>
-        <input type="date" id="formAddDate" class="form-control" name="addDate" required>
+        <input type="date" id="formAddDate" class="form-control" name="addDate" required valueAsNumber>
         <div class="invalid-feedback">
           Please provide a date of publication (MM/DD/YYYY).
         </div>

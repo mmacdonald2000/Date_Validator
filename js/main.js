@@ -19,24 +19,26 @@ DisplayValidatedDate.prototype._handleDisplay = function (e) {
   console.log(date);
   console.log('type:')
   console.log(typeof date);
-  if(this._bootstrapBasicValidation(date)) {
+
+  if(this._isValidDate(date)) {
     $('#dateInsert').html(date);
-    console.log(date.isValid());
+    console.log(date);
   } else {
-    console.log("Please enter a valid date")
-    var date_input = document.getElementById('formAddDate')
-    var actualDate = event
-    console.log(actualDate);
-    console.log(typeof actualDate)
 
   }
-
 }
 
-DisplayValidatedDate.prototype._bootstrapBasicValidation = function () {
+DisplayValidatedDate.prototype._isValidDate = function () {
   var form = document.getElementsByClassName('needs-validation')[0]
+  form.classList.add('was-validated');
   if (form.checkValidity() === false) {
     console.log('Not valid');
+    var checkInput = document.getElementById('formAddDate').validity.badInput;
+    if(checkInput){
+      $('.invalid-feedback').empty().text('Please re-enter the date in mm-dd-yyyy format')
+    } else {
+      $('.invalid-feedback').empty().text('Please enter a date.')
+    }
     event.preventDefault();
     event.stopPropagation();
     return false;
@@ -46,15 +48,7 @@ DisplayValidatedDate.prototype._bootstrapBasicValidation = function () {
 
 };
 
-DisplayValidatedDate.prototype.isValidDate = function (date) {
-  return true
-};
 
-
-
-// if ($('form').val() !== 0)
-
-// var serializedInput = $('form').serializeArray();
 
 
 // // from MDN docs https://developer.mozilla.org/en-US/docs/Learn/HTML/Forms/Form_validation
