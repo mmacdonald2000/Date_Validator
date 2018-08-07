@@ -12,11 +12,14 @@
     <h1>Date Validation Feedback </h1>
     <p>This code gives the user some feedback based on the HTML 5 date input type.  Feel free to give it several incorrect dates (2/31/2000 for example).</p>
 
-    <form id="dateForm">
+    <form id="dateForm" class="needs-validation" novalidate>
       <!--Date-->
       <div class="form-group">
         <label for="formAddDate">Publication Date</label>
         <input type="date" id="formAddDate" class="form-control" name="addDate" required>
+        <div class="invalid-feedback">
+          Please provide a date of publication (MM/DD/YYYY).
+        </div>
       </div>
       <!--Submit-->
       <div class="form-group">
